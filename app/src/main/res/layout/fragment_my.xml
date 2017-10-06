@@ -1,0 +1,103 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.vlusi.klintelligent.fragments.MyFragment">
+<!--我的fragment界面-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/my_bg_height"
+        android:background="@drawable/img_my_background"
+        android:fitsSystemWindows="true">
+
+        <com.vlusi.klintelligent.widget.RoundImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/my_avatar_size"
+            android:layout_height="@dimen/my_avatar_size"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/spacing_huge"
+            android:src="@drawable/img_default_avatar" />
+
+        <LinearLayout
+            android:id="@+id/ll_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/spacing_medium">
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                style="@style/fragment_my_btn"
+                android:layout_marginRight="@dimen/spacing_medium"
+                android:text="@string/account_register" />
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                style="@style/fragment_my_btn"
+                android:text="@string/account_login" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_small"
+            android:visibility="gone"
+            tools:text="用户名" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/windowBackground"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_setting"
+            style="@style/my_btn_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:drawableLeft="@drawable/ic_set_n"
+            android:text="@string/setting"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+
+        <Button
+            android:id="@+id/btn_about"
+            style="@style/my_btn_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_about_n"
+            android:text="@string/about"/>
+
+        <Button
+            android:id="@+id/btn_exit"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:background="@color/white"
+            android:text="@string/exit"
+            android:textColor="@color/red"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

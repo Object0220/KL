@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="@dimen/spacing_small">
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:text="name"
+        android:id="@+id/tv_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_main" />
+
+    <Button
+        android:layout_centerVertical="true"
+        android:text="@string/connect"
+        android:layout_alignParentRight="true"
+        android:id="@+id/btn_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/bluetooth_connect_btn_height"
+        android:background="@drawable/btn_blue"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

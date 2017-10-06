@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.vlusi.klintelligent.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></FrameLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_gray"></View>
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/tab_margin_bottom"
+        android:paddingTop="@dimen/tab_margin_top">
+
+        <RadioButton
+            android:id="@+id/rb_device"
+            style="@style/rb_bottom_tab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_tab1"
+            android:text="@string/device" />
+
+        <!--  <RadioButton
+            android:id="@+id/rb_drive"
+            style="@style/rb_bottom_tab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_tab2"
+            android:text="@string/drive"/>-->
+
+        <RadioButton
+            android:id="@+id/rb_album"
+            style="@style/rb_bottom_tab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_tab3"
+            android:text="@string/album" />
+
+        <RadioButton
+            android:id="@+id/rb_my"
+            style="@style/rb_bottom_tab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_tab4"
+            android:text="@string/my" />
+
+
+    </RadioGroup>
+
+
+</LinearLayout>

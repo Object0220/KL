@@ -1,0 +1,146 @@
+<resources>
+    <string name="app_name">FastWheel</string>
+    <!--main page-->
+    <string name="device">device</string>
+    <string name="album">album</string>
+    <string name="my">my</string>
+
+    <!--device page-->
+    <string name="fast_wheel">FastWheel</string>
+    <string name="connect_your_device">connect_your_device</string>
+    <string name="connect_device">connect_device</string>
+    <string name="learn_more">learn_more</string>
+    <string name="fast_wheel_en">FastWheel</string>
+
+    <!--camera-->
+    <string name="exit">exit</string>
+
+    <!--Activity标题，需要大写-->
+    <string name="Album">Album</string>
+    <string name="Camera">Camera</string>
+    <string name="Edit">Edit</string>
+    <string name="Setting">Setting</string>
+    <string name="YunnanSetting">Gimbal</string>
+    <string name="CameraSettings">CameraSettings</string>
+    <string name="FirmwareUpdate">FirmwareUpdate</string>
+    <string name="Login">Login</string>
+    <string name="Register">Register</string>
+    <string name="Language">Language</string>
+    <string name="Unit">Unit</string>
+    <string name="About">About</string>
+    <string name="PhotoSize">PhotoSize</string>
+    <string name="VideoSize">VideoSize</string>
+    <string name="FlashLamp">FlashLamp</string>
+    <string name="GridLines">GridLines</string>
+    <string name="ResetCamer">ResetCamer</string>
+    <string name="On">On</string>
+    <string name="Close">Close</string>
+    <string name="Auto">Auto</string>
+    <string name="ResetCamerSettings">Do you want to revert to factory settings?</string>
+    <string name="confirm">Confirm</string>
+
+
+    <!--account-->
+    <string name="account_input_email">input_email</string>
+    <string name="account_input_pwd">input_pwd</string>
+    <string name="account_login">Login</string>
+    <string name="account_register_account">register</string>
+    <string name="account_forget_pwd_q">forget_pwd</string>
+    <string name="account_forget_pwd">Forget_pwd</string>
+    <string name="account_other_login">other</string>
+    <string name="next_step">next_step</string>
+    <string name="account_input_captcha">input_captcha</string>
+    <string name="account_error_code">account_error_code!</string>
+    <string name="account_register">register</string>
+    <string name="account_input_new_pwd">input_new_pwd</string>
+    <string name="account_input_pwd_again">input_pwd_again</string>
+    <string name="setting">setting</string>
+    <string name="about">about</string>
+    <!--退出时AlertDialog-->
+    <string name="Exit_current_account">Exit_current_account</string>
+    <string name="Sure_you_want_to_exit">Sure_you_want_to_exit ?</string>
+    <string name="Sure">Sure</string>
+    <string name="Cancle">Cancle</string>
+    <string name="my_scan_qr_code_get_client">scan_get_client</string>
+    <string name="check_update">Check_update</string>
+    <string name="Version">Version</string>
+    <string name="language">language</string>
+    <string name="clean_cache">clean_cache</string>
+    <string name="unit">unit</string>
+    <string name="miles">Miles</string>
+    <string name="km">Km</string>
+    <string name="metric">metric Km</string>
+    <string name="imperial">imperial Miles</string>
+    <string name="language_en">English</string>
+    <string name="language_zh_cn">中文(简体)</string>
+    <string name="nickname">nick</string>
+    <string name="Icon">icon</string>
+    <string name="input_nick_name">input_nick_name</string>
+    <string name="personal_info">Info</string>
+    <string name="nickname_empty">nickname_empty!</string>
+    <string name="Please_Login">Please_Login !</string>
+    <!--bluetooth-->
+    <string name="enter_camera">camera</string>
+    <string name="bluetooth">bluetooth</string>
+    <string name="device_name">device_name</string>
+    <string name="connect">connect</string>
+    <string name="Connected">Connected</string>
+
+    <!--云台摄像机-->
+    <string name="single_photo">single_photo</string>
+    <string name="pan_photo">pan_photo</string>
+    <string name="long_exposure">long_exposure</string>
+    <!--相机设置-->
+    <string name="photo">Camera</string>
+    <string name="cloud_deck">Gimbal</string>
+    <string name="firmware_upgrade">FirmwareUpgrade</string>
+
+    <!--相册多选界面-->
+    <string name="Selected__">Selected</string>
+    <string name="cancel">cancel</string>
+    <string name="term">term</string>
+    <!--云台设置界面-->
+    <string name="GeneralSetting">GeneralSetting</string>
+    <string name="PitchAxis">PitchAxis</string>
+    <string name="OperatingLeverSpeed">OperatingLeverSpeed</string>
+    <string name="OperatingLeverDirection">OperatingLeverDirection</string>
+    <string name="ReverseTranslation">ReverseTranslation</string>
+    <string name="ReversePitch">ReversePitch</string>
+    <string name="Calibrate">Calibrate</string>
+    <string name="CalibrateHorizon">CalibrateHorizon</string>
+    <string name="AutoCalibration">AutoCalibration</string>
+    <string name="ResetGimbal">AutoCalibration</string>
+
+    <string name="fast">fast</string>
+    <string name="medium">medium</string>
+    <string name="slow">slow</string>
+    <string name="HorizontalVertical">HorizontalVertical</string>
+    <string name="FreeOrientation">FreeOrientation</string>
+    <string name="start">start</string>
+    <string name="reset">reset</string>
+
+    <string name="HardwareVersion">Hardware:</string>
+    <string name="SoftwareVersion">Software:</string>
+    <string name="UpdateFirmware">UpdateFirmware</string>
+
+    <string name="FirmwareDownload">FirmwareDownload</string>
+    <string name="Download">Download</string>
+    <string name="VersionUpdateReminder">VersionUpdateReminder</string>
+    <string name="Later">Later</string>
+    <string name="UpdateNow">UpdateNow</string>
+    <string name="CheckNewVersion">Check to the Yuntai software has a new version!</string>
+
+    <string name="update">Firmware update...</string>
+    <string name="update_ota">OTA</string>
+    <string name="Firmware_has_new_version">Firmware has new version</string>
+    <string name="Whether_to_clear_the_cache">Whether to clear the cacheSize？</string>
+    <string name="Panorama_mode">Panorama mode</string>
+    <string name="Single_shot_mode">Single shot mode</string>
+    <string name="The_latest_version">The latest version</string>
+    <string name="Turn_off_delay_shooting">Turn off delay shooting</string>
+    <string name="rectangle">rectangle</string>
+    <string name="connect_Connected">Connected</string>
+
+
+
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/grid_item"
+        android:layout_width="match_parent"
+        android:layout_height="100dip" />
+    <ImageView
+        android:padding="40dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/iv_play"
+        android:src="@drawable/ic_play"
+        android:scaleType="centerCrop"
+        android:layout_width="wrap_content"
+        android:layout_height="100dip" />
+    <com.vlusi.klintelligent.view.InterceptRelativeLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/iv_Check1"
+        android:layout_alignRight="@+id/grid_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <CheckBox
+            android:layout_alignParentBottom="true"
+            android:id="@+id/iv_Check"
+            android:scaleType="centerCrop"
+
+            android:layout_alignEnd="@+id/grid_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.vlusi.klintelligent.view.InterceptRelativeLayout>
+
+
+
+
+
+
+
+</RelativeLayout>

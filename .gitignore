@@ -1,0 +1,9 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+/build
+/openCVLibrary320/build
+/app/app-release.apk
+/app/.externalNativeBuild
+/app/build

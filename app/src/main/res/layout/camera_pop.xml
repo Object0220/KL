@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:id="@+id/layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="100dp">
+
+        <ImageView
+            android:id="@+id/delayShooting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/single_photo"
+            android:text="单拍" />
+
+
+        <ImageView
+            android:id="@+id/camera_1s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/delayShooting"
+            android:paddingTop="20dp"
+            android:src="@mipmap/second_a" />
+
+
+        <ImageView
+            android:id="@+id/camera_5s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/camera_1s"
+            android:paddingTop="20dp"
+            android:src="@mipmap/second_b" />
+
+        <ImageView
+            android:id="@+id/camera_10s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/camera_5s"
+            android:layout_below="@+id/camera_5s"
+            android:paddingTop="20dp"
+            android:src="@mipmap/second_c" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

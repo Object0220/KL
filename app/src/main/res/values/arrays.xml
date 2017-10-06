@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="device_list">
+        <item>Aurora</item>
+       <!-- <item>F0</item>
+        <item>Ring</item>-->
+    </string-array>
+</resources>

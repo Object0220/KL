@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.vlusi.klintelligent.activities.AboutActivity">
+
+    <include layout="@layout/include_top_title"/>
+
+    <ImageView
+        android:layout_width="@dimen/my_avatar_size"
+        android:layout_height="@dimen/my_avatar_size"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/content_margin"
+        android:src="@mipmap/ic_launcher"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/content_margin"
+        android:src="@drawable/img_grcode"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:text="@string/my_scan_qr_code_get_client"
+        android:textColor="@color/text_gray"/>
+
+    <include
+        android:id="@+id/check_update"
+        layout="@layout/include_btn_right_arrow"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/spacing_small"
+        android:text="Copyright©2016-2019"
+        android:textColor="@color/text_gray"/>
+
+
+</LinearLayout>

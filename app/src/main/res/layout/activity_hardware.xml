@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/include_top_title" />
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="3dp"
+        android:id="@+id/r1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_1"
+            android:text="@string/HardwareVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/hardware"
+            android:layout_centerVertical="true"
+            android:textSize="50px"
+            android:layout_marginLeft="14sp"
+            android:text="-------"
+            android:layout_toRightOf="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="3dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/r2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_2"
+            android:text="@string/SoftwareVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/oftware"
+            android:layout_centerVertical="true"
+            android:textSize="50px"
+            android:layout_marginLeft="14sp"
+            android:text="-------"
+            android:layout_toRightOf="@+id/tv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+    <Button
+       android:layout_marginTop="420dp"
+        android:id="@+id/upgrade"
+        style="@style/btn_round_blue"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:text="@string/UpdateFirmware" />
+
+</LinearLayout>

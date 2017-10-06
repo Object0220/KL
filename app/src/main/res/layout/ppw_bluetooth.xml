@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="325dp"
+              android:layout_height="wrap_content"
+              android:background="@drawable/rectangle_corners_white"
+              android:orientation="vertical">
+<!--蓝牙弹出popwindow-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/space_ten"
+        android:layout_marginRight="@dimen/space_ten"
+       >
+
+        <TextView
+            android:id="@+id/tv_camern"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/enter_camera"
+            android:textColor="@color/text_blue"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/bluetooth"
+            android:textColor="@color/black"/>
+
+        <ImageButton
+            android:id="@+id/ib_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_exit_n"
+            android:padding="10dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginLeft="@dimen/space_ten"
+            android:layout_marginRight="@dimen/space_ten"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/device_name"
+                android:textSize="@dimen/text_size_small" />
+
+            <ImageView
+                android:id="@+id/iv_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:src="@drawable/img_refresh" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_gray" />
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ProgressBar
+        android:layout_centerInParent="true"
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        />
+    <ListView
+        android:id="@+id/list_device"
+        android:layout_width="match_parent"
+        android:layout_height="181dp"
+        android:layout_marginLeft="@dimen/space_ten"
+        android:layout_marginRight="@dimen/space_ten"></ListView>
+
+</RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

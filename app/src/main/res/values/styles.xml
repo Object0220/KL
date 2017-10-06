@@ -1,0 +1,182 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--<item name="android:inputType">text</item>-->
+        <item name="android:maxLines">1</item>
+        <item name="toolbarStyle">@style/ToolBarStyle</item>
+        <item name="colorAccent">@color/text_blue</item>
+    </style>
+
+    <style name="ToolBarStyle" parent="Base.Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+        <item name="contentInsetLeft">0dp</item>
+        <item name="contentInsetRight">0dp</item>
+    </style>
+
+    <!-- 自定义仿IOS的AlertDialog的样式 -->
+    <style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- 自定义仿IOS的ActionSheet底部Dialog的样式 ，有模糊效果 -->
+    <style name="ActionSheetDialogStyle" parent="@android:style/Theme.Dialog">
+
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- Dialog进入及退出动画 -->
+        <item name="android:windowAnimationStyle">@style/ActionSheetDialogAnimation</item>
+    </style>
+
+    <!-- ActionSheet进出动画 -->
+    <style name="ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/actionsheet_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/actionsheet_dialog_out</item>
+    </style>
+    <!--Main tab radio button-->
+    <style name="rb_bottom_tab">
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@drawable/selector_tab_text</item>
+        <item name="android:textSize">@dimen/text_size_xxx_small</item>
+    </style>
+
+    <!--Device tab spinner-->
+    <style name="MySpinner" parent="Widget.AppCompat.Light.Spinner.DropDown.ActionBar">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/ic_down</item>
+    </style>
+
+    <!--Splash Theme-->
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+    <style name="btn_round_blue">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:layout_marginTop">@dimen/space_ten</item>
+        <item name="android:background">@drawable/btn_round_blue</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="button_img_top">
+        <item name="android:textSize">@dimen/text_size_x_small</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_width">@dimen/width_button_top_img</item>
+        <item name="android:drawablePadding">@dimen/spacing_tiny</item>
+        <item name="android:textColor">@color/text_gray_dark</item>
+    </style>
+
+    <style name="button_cancel">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:background">@null</item>
+        <item name="android:padding">@dimen/spacing_small</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="btn_submit_blue">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:background">@drawable/selector_button_focus</item>
+        <item name="android:enabled">false</item>
+        <item name="android:textColor">@drawable/selector_text_while_gray</item>
+    </style>
+
+    <style name="ll_content_space_large">
+        <item name="android:layout_marginLeft">@dimen/content_margin</item>
+        <item name="android:layout_marginRight">@dimen/content_margin</item>
+        <item name="android:layout_marginTop">@dimen/content_margin</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="fragment_my_btn">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:layout_width">@dimen/my_btn_width</item>
+        <item name="android:layout_height">@dimen/my_btn_height</item>
+        <item name="android:background">@drawable/btn_round_white</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="my_btn_ll" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@color/white</item>
+        <item name="android:drawablePadding">@dimen/spacing_small</item>
+        <item name="android:drawableRight">@drawable/ic_right_arrow_n</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:padding">@dimen/spacing_small</item>
+    </style>
+
+    <style name="btn_check">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_marginTop">@dimen/spacing_line</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:drawableRight">@drawable/selector_radio_btn</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/spacing_small</item>
+    </style>
+
+    <style name="radio_button">
+        <item name="android:background">@color/white</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_marginTop">@dimen/spacing_line</item>
+        <item name="android:drawableRight">@drawable/selector_radio_btn</item>
+        <item name="android:padding">@dimen/spacing_small</item>
+        <item name="android:textColor">@color/text_black</item>
+    </style>
+
+
+    <!-- 取消界面转场动画使用-->
+    <style name="Theme" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@style/Animation</item>
+    </style>
+    <style name="Animation">
+        <item name="android:activityOpenEnterAnimation">@null</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@null</item>
+        <item name="android:taskOpenEnterAnimation">@null</item>
+        <item name="android:taskOpenExitAnimation">@null</item>
+        <item name="android:taskCloseEnterAnimation">@null</item>
+        <item name="android:taskCloseExitAnimation">@null</item>
+        <item name="android:taskToFrontEnterAnimation">@null</item>
+        <item name="android:taskToFrontExitAnimation">@null</item>
+        <item name="android:taskToBackEnterAnimation">@null</item>
+        <item name="android:taskToBackExitAnimation">@null</item>
+    </style>
+
+
+
+
+
+</resources>

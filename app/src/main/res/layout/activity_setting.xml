@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_setting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.vlusi.klintelligent.activities.SettingActivity">
+
+    <include layout="@layout/include_top_title"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_medium"/>
+
+    <include
+        android:id="@+id/language_setting"
+        layout="@layout/include_btn_right_arrow"/>
+
+    <include
+        android:id="@+id/clean_setting"
+        layout="@layout/include_btn_right_arrow"/>
+
+    <include
+        android:id="@+id/unit_setting"
+        layout="@layout/include_btn_right_arrow"/>
+
+</LinearLayout>

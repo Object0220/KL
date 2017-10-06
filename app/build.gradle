@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+
+android {
+
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+
+    splits {
+        abi {
+            enable true
+            reset()
+            universalApk false
+        }
+    }
+
+
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+
+        multiDexEnabled true
+        applicationId "com.vlusi.klintelligent"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++11 -frtti -fexceptions"
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
+        }
+
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    sourceSets {
+        main() {
+            jniLibs.srcDirs = ['src/main/libs']
+        }
+    }
+
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support:support-v4:26.+'
+    compile 'com.android.support:recyclerview-v7:26+'
+    compile 'com.google.code.gson:gson:2.2.4'  //Gson 数据bean
+    compile 'com.inuker.bluetooth:library:1.3.8' //蓝牙框架
+    compile 'com.github.bumptech.glide:glide:3.7.0' //Glide 图片加载
+    compile 'com.jakewharton:butterknife:5.1.1'   // butterknife  快速初始化控件
+    compile 'com.tonicartos:stickygridheaders:1.0.1'  //粘性网格GridView
+    compile 'com.zhy:okhttputils:2.6.2'    //okHttpUitils 网络框架
+    compile 'cn.jzvd:jiaozivideoplayer:6.0.1'   //播放器
+    compile 'org.greenrobot:eventbus:3.0.0'   //EventBus  订阅者  发布至
+    compile files('src/main/libs/photoView.jar')   //photoView 图片查看器
+    compile project(':openCVLibrary320')          //openCV3.2
+    compile files('src/main/libs/MobCommons-2017.0914.1125.jar')
+    compile files('src/main/libs/MobTools-2017.0914.1125.jar')
+    compile files('src/main/libs/ShareSDK-Core-3.1.0.jar')
+    compile files('src/main/libs/ShareSDK-Facebook-3.1.0.jar')
+    compile files('src/main/libs/ShareSDK-GooglePlus-3.1.0.jar')
+    compile files('src/main/libs/ShareSDK-QQ-3.1.0.jar')
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimaryDark">#b2b2b2</color>
+    <color name="colorAccent">#fafafa</color>
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <!--main-->
+    <color name="text_gray_dark">#898989</color>
+    <color name="text_gray">#999999</color>
+    <color name="text_blue">#039be5</color>
+    <color name="text_black">#383636</color>
+    <color name="line_gray">#bdbdbd</color>
+    <!--base color-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+
+    <!--camera-->
+    <!--my fragment-->
+    <color name="my_status_bar">#39608C</color>
+    <color name="windowBackground">#fafafa</color>
+</resources>

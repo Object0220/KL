@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+    <ImageView
+        android:layout_below="@+id/videoplayer"
+        android:id="@+id/iv_focus2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+         />
+    <cn.jzvd.JZVideoPlayerStandard
+       android:layout_centerInParent="true"
+        android:id="@+id/videoplayer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    <ImageView
+        android:layout_below="@+id/videoplayer"
+        android:id="@+id/iv_focus"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_above="@+id/videoplayer" />
+</LinearLayout>

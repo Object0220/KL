@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_unit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.vlusi.klintelligent.activities.UnitActivity">
+
+    <include layout="@layout/include_top_title"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_large"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RadioButton
+            android:id="@+id/rb_metric"
+            style="@style/radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/metric"/>
+
+        <RadioButton
+            android:id="@+id/rb_imperial"
+            style="@style/radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/imperial"/>
+
+    </RadioGroup>
+
+</LinearLayout>

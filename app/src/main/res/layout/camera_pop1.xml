@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+
+        android:id="@+id/layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="100dp">
+
+
+        <ImageView
+            android:id="@+id/panoramicPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/panoramic"
+            android:text="全景" />
+
+        <ImageView
+            android:paddingTop="20dp"
+            android:layout_below="@+id/panoramicPhoto"
+            android:id="@+id/one_frame11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/big180" />
+
+
+        <ImageView
+
+            android:id="@+id/camera_improvement11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/one_frame11"
+            android:paddingTop="20dp"
+            android:src="@mipmap/big330" />
+
+
+        <ImageView
+            android:id="@+id/long_exposure11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/camera_improvement11"
+            android:paddingTop="20dp"
+            android:src="@mipmap/bignet" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.vlusi.klintelligent.fragments.DeviceFragment">
+
+
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/tab_title_right">
+
+            <ImageView
+                android:id="@+id/iv_my"
+                android:layout_width="@dimen/image_size"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:src="@drawable/ic_my"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/fast_wheel"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:textSize="15dp"
+                android:textColor="@color/line_gray"
+                android:text="@string/About"
+                android:id="@+id/iv_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/image_size"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_toolbar_text"
+        android:text="@string/connect_your_device"
+        android:textColor="@color/text_gray_dark"
+        android:textSize="@dimen/text_size_small"/>
+
+    <!--设备选择文字-->
+    <LinearLayout
+        android:id="@+id/ll_choose_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_connect_device">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_fast_device"
+            android:text="@string/fast_wheel_en"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_main"/>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:entries="@array/device_list"
+            style="@style/MySpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_viewpager"
+        android:layout_marginTop="@dimen/space_connect_device"
+      >
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/ll_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/space_connect_device"
+        android:orientation="horizontal"></LinearLayout>
+
+    <Button
+        android:id="@+id/btn_submit"
+        style="@style/btn_round_blue"
+        android:layout_width="match_parent"
+        android:text="@string/connect_device"/>
+
+    <TextView
+        android:id="@+id/tv_learn_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/space_ten"
+        android:text="@string/learn_more"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/text_size_xx_small"/>
+
+
+</LinearLayout>

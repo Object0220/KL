@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top_title" />
+
+    <include
+        android:id="@+id/Photo_resolution"
+        layout="@layout/include_btn_right_arrow" />
+
+    <include
+        android:id="@+id/Video_resolution"
+        layout="@layout/include_btn_right_arrow" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+
+    <include
+        android:id="@+id/Camera_flash"
+        layout="@layout/include_btn_right_arrow" />
+
+    <include
+        android:id="@+id/Camera_grid"
+        layout="@layout/include_btn_right_arrow" />
+
+    <include
+        android:id="@+id/Camera_reset"
+        layout="@layout/include_btn_right_arrow" />
+
+</LinearLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_nick_name"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="com.vlusi.klintelligent.activities.NickNameActivity">
+
+    <include
+
+        layout="@layout/include_top_title"/>
+
+    <LinearLayout
+        android:id="@+id/layout1"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_small">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/nickname"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_small"/>
+
+
+        <EditText
+            android:layout_gravity="center_vertical"
+            android:id="@+id/et_nickname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/input_nick_name"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="@dimen/text_size_x_small"/>
+
+        <ImageButton
+            android:id="@+id/ib_clear"
+            style="@style/button_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:src="@drawable/ic_cancel_n"/>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_below="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/alertdialog_line" />
+    <RelativeLayout
+        android:id="@+id/layout_icon"
+        android:padding="@dimen/spacing_small"
+        android:background="@color/white"
+        android:layout_below="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tuxiang"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="@string/Icon"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_small"/>
+        <ImageView
+            android:id="@+id/iv_tou"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/img_default_avatar"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

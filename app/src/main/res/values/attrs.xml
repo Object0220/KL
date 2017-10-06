@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--IndicatorView-->
+    <declare-styleable name="IndicatorView">
+        <!--Normal image-->
+        <attr name="indicator_drawableNormal" format="reference" />
+        <!--Selected image-->
+        <attr name="indicator_drawableSelect" format="reference" />
+        <!--Interval-->
+        <attr name="indicator_interval" format="dimension" />
+        <!--Normal color-->
+        <attr name="indicator_colorNormal" format="color" />
+        <!--Selected color-->
+        <attr name="indicator_colorSelect" format="color" />
+        <!--Radius-->
+        <attr name="indicator_radius" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="TempImageView">
+        <attr name="animat_id" format="integer" />
+    </declare-styleable>
+
+    <!--自定义对焦view-->
+    <declare-styleable name="FocusImageView">
+        <attr name="focus_focusing_id" format="integer" />
+        <attr name="focus_success_id" format="integer" />
+        <attr name="focus_fail_id" format="integer" />
+    </declare-styleable>
+
+
+
+
+    <!--自定义网格view-->
+    <declare-styleable name="CameraLine_Attrs">
+        <attr name="lineIsWide" format="boolean"/>
+        <attr name="lineCrossLength" format="dimension"/>
+        <attr name="lineColor" format="color"/>
+        <attr name="lineWidth" format="dimension"/>
+        <attr name="lineCrossWidth" format="dimension"/>
+        <attr name="lineCrossColor" format="color"/>
+        <attr name="lineIsShow" format="boolean"/>
+    </declare-styleable>
+
+</resources>

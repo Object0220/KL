@@ -1,0 +1,51 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="space_ten">10dp</dimen>
+    <dimen name="space_twenty">20dp</dimen>
+    <dimen name="space_thirty">30dp</dimen>
+    <dimen name="space_forty">40dp</dimen>
+    <dimen name="space_battery">15dp</dimen>
+
+
+    <!-- typical spacing between two views, margin or padding -->
+    <dimen name="spacing_tiny">5dp</dimen>
+    <dimen name="spacing_small">10dp</dimen>
+    <dimen name="spacing_medium">20dp</dimen>
+    <dimen name="spacing_large">30dp</dimen>
+    <dimen name="spacing_huge">40dp</dimen>
+    <dimen name="spacing_line">1dp</dimen>
+
+    <!--button-->
+    <dimen name="width_button_top_img">70dp</dimen>
+
+    <!--主页面-->
+    <dimen name="tab_height">56dp</dimen>
+    <dimen name="tab_margin_top">6dp</dimen>
+    <dimen name="tab_margin_bottom">6dp</dimen>
+    <!--device-->
+    <dimen name="tab_title_right">10dp</dimen>
+    <dimen name="image_size">21dp</dimen>
+    <dimen name="space_toolbar_text">20dp</dimen>
+    <dimen name="space_connect_device">10dp</dimen>
+    <dimen name="space_fast_device">5dp</dimen>
+    <dimen name="height_viewpager">250dp</dimen>
+
+    <!-- text size -->
+    <dimen name="text_size_xxx_small">10sp</dimen>
+    <dimen name="text_size_xx_small">12sp</dimen>
+    <dimen name="text_size_x_small">14sp</dimen>
+    <dimen name="text_size_small">16sp</dimen>
+    <dimen name="text_size_main">18sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+
+    <!--activity-->
+    <dimen name="content_margin">30dp</dimen>
+    <dimen name="my_bg_height">200dp</dimen>
+    <dimen name="my_avatar_size">90dp</dimen>
+    <dimen name="my_btn_width">60dp</dimen>
+    <dimen name="my_btn_height">30dp</dimen>
+    <dimen name="bluetooth_connect_btn_height">30dp</dimen>
+
+    <!--fragment my-->
+
+</resources>

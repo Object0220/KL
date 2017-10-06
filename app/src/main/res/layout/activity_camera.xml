@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:camera="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_camera"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vlusi.klintelligent.activities.Camera_Activity">
+
+    <FrameLayout
+        android:id="@+id/camera_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    //总的一个RelativeLayout
+
+    <RelativeLayout
+        android:id="@+id/rl_foucsView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!-- 网格线 -->
+        <com.vlusi.klintelligent.view.GridViewLine.CameraLine xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/id_cl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:lineCrossLength="5dp"
+            app:lineCrossWidth="1dp"
+            app:lineWidth="1dp" />
+
+        <!--延时拍摄倒计时-->
+        <TextView
+            android:id="@+id/delayed"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="110sp"
+            android:visibility="gone" />
+
+        <com.vlusi.klintelligent.Camera.FocusImageView
+            android:id="@+id/focusImageView"
+            android:layout_width="75dip"
+            android:layout_height="75dip"
+            camera:focus_fail_id="@drawable/focus_focus_failed"
+            camera:focus_focusing_id="@drawable/focus_focusing"
+            camera:focus_success_id="@drawable/focus_focused" />
+
+        <!--主界面房屋图标-->
+        <ImageButton
+            android:id="@+id/ib_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_ten"
+            android:layout_marginTop="@dimen/space_ten"
+            android:background="@drawable/ic_home_n" />
+        <!--蓝牙图标-->
+        <ImageButton
+            android:id="@+id/ib_bluetooth"
+            android:layout_width="@dimen/space_thirty"
+            android:layout_height="@dimen/space_thirty"
+            android:layout_marginLeft="@dimen/space_thirty"
+            android:layout_marginTop="@dimen/space_ten"
+            android:layout_toRightOf="@id/ib_home"
+            android:background="@drawable/bluetooth_closs" />
+
+        <!--电量图标-->
+        <com.vlusi.klintelligent.view.ProgerssBtn
+            android:id="@+id/ib_camera_battery"
+            android:layout_width="@dimen/space_thirty"
+            android:layout_height="@dimen/space_battery"
+            android:layout_marginRight="@dimen/space_twenty"
+            android:layout_marginTop="@dimen/space_ten"
+            android:layout_toLeftOf="@+id/ll_right_bar"
+            android:background="@drawable/camera_battery" />
+
+
+        <!--设置，摄像头正反面，和图片-->
+        <LinearLayout
+            android:id="@+id/left_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ib_home"
+            android:layout_marginBottom="@dimen/space_ten"
+            android:layout_marginLeft="@dimen/space_ten"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="bottom">
+
+                <ImageButton
+                    android:id="@+id/ib_single_photo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/single_photo_0s" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="bottom">
+
+                <ImageButton
+                    android:id="@+id/ib_switch_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_switch_camera" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="bottom">
+
+                <ImageButton
+                    android:id="@+id/ib_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_setting_n" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_tracker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/left_bar"
+            android:layout_marginLeft="@dimen/space_twenty"
+            android:layout_toRightOf="@id/left_bar"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/button_capture"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/player_record"
+                android:visibility="gone" />
+
+            <Chronometer
+                android:id="@+id/textChrono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <!--图库，主按钮，切换视频拍照按钮-->
+        <RelativeLayout
+            android:id="@+id/ll_right_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/space_ten"
+            android:layout_marginRight="@dimen/space_ten"
+            android:layout_marginTop="@dimen/space_ten">
+            <!--切换按钮-->
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_capture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:rotation="90" />
+            <!--主按钮-->
+            <ImageButton
+                android:id="@+id/ib_photo_capture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/selector_photo_capture" />
+
+            <ImageButton
+                android:id="@+id/ib_video_capture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/btn_record_n"
+                android:visibility="gone" />
+            <!--图库-->
+            <ImageButton
+                android:id="@+id/ib_camera_gallery"
+                android:layout_width="@dimen/space_thirty"
+                android:layout_height="@dimen/space_thirty"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/camera_gallery" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</FrameLayout>

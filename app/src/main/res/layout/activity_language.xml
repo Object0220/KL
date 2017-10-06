@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_language"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.vlusi.klintelligent.activities.LanguageActivity">
+
+    <include layout="@layout/include_top_title"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_large"/>
+
+    <RadioGroup
+        android:id="@+id/rg_language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_zh_cn"
+            style="@style/radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/language_zh_cn" />
+
+
+        <RadioButton
+            android:id="@+id/rb_english"
+            android:text="@string/language_en"
+            android:layout_width="match_parent"
+            style="@style/radio_button"
+            android:layout_height="wrap_content"/>
+
+
+
+       <!-- <RadioButton
+            android:id="@+id/rb_it"
+            style="@style/radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/language_it" />
+
+        <RadioButton
+            android:id="@+id/rb_de"
+            style="@style/radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/language_de" />-->
+
+
+<!--
+        <RadioButton
+        android:id="@+id/rb_es"
+        android:text="@string/language_es"
+        android:layout_width="match_parent"
+        style="@style/radio_button"
+        android:layout_height="wrap_content"/>
+
+        <RadioButton
+            android:id="@+id/rb_fr"
+            android:text="@string/language_fr"
+            android:layout_width="match_parent"
+            style="@style/radio_button"
+            android:layout_height="wrap_content"/>-->
+
+
+    </RadioGroup>
+
+</LinearLayout>
