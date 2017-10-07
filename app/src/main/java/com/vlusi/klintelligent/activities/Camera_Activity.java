@@ -561,7 +561,7 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
      * TODO 拍照方法
      */
     private void takePicture() {
-
+        mFoucsView.setVisibility(View.INVISIBLE);
         EventBus.getDefault().post(new MessageEvent(true));
 
         mFoucsView.setVisibility(View.VISIBLE);
@@ -591,7 +591,6 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
     Camera.PictureCallback mPanoramicCallback = new Camera.PictureCallback() {
         @Override
         public void onPictureTaken(byte[] data, Camera camera) {
-            mFoucsView.setVisibility(View.INVISIBLE);
             ///storage/emulated/0/FastWheel/1507209334286.jpg
         /*  Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
             try {
@@ -605,7 +604,6 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
             }  catch (Exception e) {
                 e.printStackTrace();
             }*/
-
 
             Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
             Mat srcImag = new Mat(bitmap.getHeight(), bitmap.getWidth(), CvType.CV_8UC4);
