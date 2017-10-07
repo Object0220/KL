@@ -186,7 +186,7 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
     private PopupWindow mPopWindow2;
     //自定义网格
     CameraLine mCameraLine;
-    private boolean mConnected =true; //连接状态
+    private boolean mConnected =false; //连接状态
 
 
     //录制视频比特率
@@ -793,12 +793,8 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
                 finish();
                 break;
             case R.id.ib_bluetooth:  //TODO:蓝牙
-                if (!mConnected){
                     initPopupWindow();
                     mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-                }else{
-                    ToastUtil.showToast(mContext,getString(R.string.connect_Connected));
-                }
                 break;
             case R.id.ib_camera_gallery: //相册
                 gallery();
@@ -1427,6 +1423,7 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onResponse(int code) {
                 if (code == REQUEST_SUCCESS) {
+                    mConnected=true;
                     ReadBatteryCapacity();
                     myRunnable = new MyRunnable();
                     mHandler.postDelayed(myRunnable, 60000);
@@ -1439,6 +1436,7 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
     class MyRunnable implements Runnable {
         @Override
         public void run() {
+
             ReadBatteryCapacity();
             mHandler.postDelayed(myRunnable, 60000);
         }

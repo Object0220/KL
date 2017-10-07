@@ -8,13 +8,13 @@
         android:id="@+id/Single_shot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/single_photo" />
+        android:src="@mipmap/single_photo1" />
 
     <ImageView
-        android:layout_marginLeft="15dp"
         android:id="@+id/panoramic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
         android:src="@mipmap/pan_photo" />
 
 </LinearLayout>
