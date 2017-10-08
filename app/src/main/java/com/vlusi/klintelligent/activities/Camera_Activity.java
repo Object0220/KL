@@ -122,8 +122,6 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
     ImageButton ibBluetooth;  //蓝牙
     @InjectView(R.id.ib_camera_battery)
     ProgerssBtn ibCameraBattery;  //相机的电池
-   /* @InjectView(R.id.ib_single_photo)
-    ImageButton ibSinglePhoto0s;  //滤镜*/
     @InjectView(R.id.ib_switch_camera)
     ImageButton ibSwitchCamera;   //切换摄像头
     @InjectView(R.id.ib_setting)
@@ -152,10 +150,10 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
     ImageView buttonCapture;  //录像计时图标
     @InjectView(R.id.textChrono)
     Chronometer textChrono;//计时文本
-    /*@InjectView(R.id.Photograph)
-    ImageButton Photograph;   //  单拍
-    @InjectView(R.id.panorama)
-    ImageButton panorama;  //全景*/
+    @InjectView(R.id.progressbar)
+    ProgressBar progressbar;  //图片拼接
+    @InjectView(R.id.camera_rl)
+    RelativeLayout cameraRl;
     private DeviceAdapterIist mDeviceAdapterIist;
 
     private boolean isOpen = true;
@@ -186,7 +184,7 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
     private PopupWindow mPopWindow2;
     //自定义网格
     CameraLine mCameraLine;
-    private boolean mConnected =false; //连接状态
+    private boolean mConnected = false; //连接状态
 
 
     //录制视频比特率
@@ -303,7 +301,7 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
         }
         if (mMac != null && mServiece != null && mCharacterWrite != null) {
             //得到远程的设备
-           BluetoothDevice remoteDevice = BluetoothUtils.getRemoteDevice(mMac);
+            BluetoothDevice remoteDevice = BluetoothUtils.getRemoteDevice(mMac);
             ClientManager.getClient().registerConnectStatusListener(remoteDevice.getAddress(), mBleConnectStatusListener);
             ibBluetooth.setImageResource(R.drawable.bluetooth_select);
             ClientManager.getClient().refreshCache(mMac);
@@ -570,11 +568,7 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
                 @Override
                 public void onAutoFocus(boolean b, Camera camera) {
                     if (b) {
-                        if (isPanoramic) {
-                            mCamera.takePicture(null, null, mPanoramicCallback);
-                        } else {
-                            mCamera.takePicture(null, null, mPictureCallback);
-                        }
+                        mCamera.takePicture(null, null, mPictureCallback);
                     } else {
                         mFoucsView.setVisibility(View.INVISIBLE);
 
@@ -588,11 +582,11 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
      * (全景)拍摄成功后对图片的处理
      */
 
-    Camera.PictureCallback mPanoramicCallback = new Camera.PictureCallback() {
+    /*Camera.PictureCallback mPanoramicCallback = new Camera.PictureCallback() {
         @Override
         public void onPictureTaken(byte[] data, Camera camera) {
             ///storage/emulated/0/FastWheel/1507209334286.jpg
-        /*  Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+        *//*  Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
             try {
                 File file=new File(path);
                 FileOutputStream   fos = new FileOutputStream(file);
@@ -603,10 +597,10 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
                 clickedImages.add(srcImag);
             }  catch (Exception e) {
                 e.printStackTrace();
-            }*/
+            }*//*
 
             Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
-            Mat srcImag = new Mat(bitmap.getHeight(), bitmap.getWidth(), CvType.CV_8UC4);
+           *//* Mat srcImag = new Mat(bitmap.getHeight(), bitmap.getWidth(), CvType.CV_8UC4);
             Imgproc.resize(srcImag, srcImag, new Size(srcImag.rows() / 4, srcImag.cols() / 4));
             Utils.bitmapToMat(bitmap, srcImag);
             Imgproc.cvtColor(srcImag, srcImag, Imgproc.COLOR_BGR2RGB);
@@ -617,10 +611,61 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
             shotPanoramic();
             if (clickedImages.size() == PanoramaSize) { //TODO 数字是可变的   6， 9 ， 10
                 createPanorama();
-            }
+            }*//*
 
         }
-    };
+    };*/
+
+
+    /**
+     * 保存图片
+     *
+     * @param bitmap
+     */
+    private void saveBitmap(Bitmap bitmap) {
+        long currentTimeMillis;
+        FileOutputStream fos = null;
+        try {
+            if (!isPanoramic) {   //单拍
+                currentTimeMillis = System.currentTimeMillis();
+                String fileName = currentTimeMillis + ".jpg";
+                File file = new File(Constant.filefolderpath, fileName);
+                fos = new FileOutputStream(file);
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+                values = new ContentValues();
+                values.put(MediaStore.MediaColumns.DATA, file.getAbsolutePath());
+                values.put(MediaStore.Images.Media.DATE_TAKEN, currentTimeMillis);
+                Uri uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+                mContext.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri));
+                fos.flush();
+                fos.close();
+                releaseCamera();  //清空相机
+                InitializeCamera(); //初始化摄像头
+                mFoucsView.setVisibility(View.INVISIBLE);
+            } else { //全景
+                Mat srcImag = new Mat(bitmap.getHeight(), bitmap.getWidth(), CvType.CV_8UC4);
+                Imgproc.resize(srcImag, srcImag, new Size(srcImag.rows() / 4, srcImag.cols() / 4));
+                Utils.bitmapToMat(bitmap, srcImag);
+                Imgproc.cvtColor(srcImag, srcImag, Imgproc.COLOR_BGR2RGB);
+                clickedImages.add(srcImag);
+                releaseCamera();  //清空相机
+                InitializeCamera(); //初始化摄像头
+
+                if (clickedImages.size() == PanoramaSize) { //TODO 数字是可变的   6， 9 ， 10
+                    createPanorama();
+                } else {
+                    shotPanoramic(); //TODO: 发送拍照指令
+                }
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            releaseCamera();  //清空相机
+            InitializeCamera(); //初始化摄像头
+            Log.i("全景", "图片保存失败");
+        }
+    }
 
 
     private void createPanorama() {
@@ -632,7 +677,8 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                dialog = ProgressDialog.show(Camera_Activity.this, null, "合成中");
+                // dialog = ProgressDialog.show(Camera_Activity.this, null, "合成中");
+                progressbar.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -691,41 +737,16 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
                         values.put(MediaStore.Images.Media.DATE_TAKEN, currentTimeMillis);
                         Uri uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
                         mContext.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri));
+                        clickedImages.clear();
+                        progressbar.setVisibility(View.GONE);
                     } catch (Exception e) {
                         e.printStackTrace();
+                        clickedImages.clear();
                     }
-                    dialog.dismiss();
-                    clickedImages.clear();
+                    //   dialog.dismiss();
                 }
             }
         }.execute();
-    }
-
-
-    private void saveBitmap(Bitmap bitmap) {
-
-        long currentTimeMillis = System.currentTimeMillis();
-        String fileName = currentTimeMillis + ".jpg";
-        File file = new File(Constant.filefolderpath, fileName);
-        try {
-            FileOutputStream fos = new FileOutputStream(file);
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
-            fos.flush();
-            fos.close();
-            releaseCamera();  //清空相机
-            InitializeCamera(); //初始化摄像头
-        } catch (Exception e) {
-            e.printStackTrace();
-            releaseCamera();  //清空相机
-            InitializeCamera(); //初始化摄像头
-            Log.i("全景", "图片保存失败");
-        }
-
-        values = new ContentValues();
-        values.put(MediaStore.MediaColumns.DATA, file.getAbsolutePath());
-        values.put(MediaStore.Images.Media.DATE_TAKEN, currentTimeMillis);
-        Uri uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
-        mContext.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri));
     }
 
 
@@ -736,8 +757,6 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
         @SuppressLint("LongLogTag")
         @Override
         public void onPictureTaken(byte[] data, Camera camera) {
-            mFoucsView.setVisibility(View.INVISIBLE);
-
             Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
             saveBitmap(bitmap);
         }
@@ -791,17 +810,17 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
                 finish();
                 break;
             case R.id.ib_bluetooth:  //TODO:蓝牙
-                    initPopupWindow();
-                    mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+                initPopupWindow();
+                mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
                 break;
             case R.id.ib_camera_gallery: //相册
                 gallery();
                 break;
-            case R.id.ib_photo_capture:
+            case R.id.ib_photo_capture:  //拍照按钮
                 if (isPanoramic) {
-                    if (isClose){
+                    if (isClose) {
                         ToastUtil.showToastLong(mContext, getString(R.string.Panorama_mode));
-                        isClose=false;
+                        isClose = false;
                     }
                     //TODO 发送全景拍照指令
                     ButtonCommandPanoramic();
@@ -1307,8 +1326,8 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onMAC(String mac, String name) {
                 if (mConnected) {  //是连接的时候就return
-                 //  ToastUtil.showToast(mContext,getString(R.string.connect_Connected));
-                   // ClientManager.getClient().disconnect(mac); //断开连接
+                    //  ToastUtil.showToast(mContext,getString(R.string.connect_Connected));
+                    // ClientManager.getClient().disconnect(mac); //断开连接
                     return;
                 }
                 if (mac != null) {
@@ -1346,10 +1365,10 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
 
         //蓝牙连接选项
         BleConnectOptions options = new BleConnectOptions.Builder()
-                 .setConnectRetry(3)  //设置连接重试
-                 .setConnectTimeout(20000)  //设置连接超时
-               .setServiceDiscoverRetry(3)  //设置服务器发现重试
-               .setServiceDiscoverTimeout(10000)  //设置服务器发现超时*/
+                .setConnectRetry(3)  //设置连接重试
+                .setConnectTimeout(20000)  //设置连接超时
+                .setServiceDiscoverRetry(3)  //设置服务器发现重试
+                .setServiceDiscoverTimeout(10000)  //设置服务器发现超时*/
                 .build(); //构建
         ClientManager.getClient().connect(remoteDevice.getAddress(), options, new BleConnectResponse() {
             @Override
@@ -1421,7 +1440,7 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onResponse(int code) {
                 if (code == REQUEST_SUCCESS) {
-                    mConnected=true;
+                    mConnected = true;
                     ReadBatteryCapacity();
                     myRunnable = new MyRunnable();
                     mHandler.postDelayed(myRunnable, 60000);
@@ -1757,10 +1776,9 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
             mMac = mac;
             mConnected = (status == STATUS_CONNECTED); //相等代表是连接状态
             connectDeviceState(); //如果需要连接设备
-            Log.i("连接状态","相机界面连接状态："+mConnected);
+            Log.i("连接状态", "相机界面连接状态：" + mConnected);
         }
     };
-
 
 
     private void connectDeviceState() {
