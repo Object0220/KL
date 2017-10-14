@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    >
+<ProgressBar
+    android:visibility="gone"
+    android:layout_centerInParent="true"
+    android:id="@+id/pb_update_bar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
 
-    <include layout="@layout/include_top_title" />
+    <!--<TextView android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_marginTop="2dp"
+        android:text="正在连接"
+        android:textSize="15sp"
+        android:layout_below="@+id/pb_update_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />-->
+
+
+    <include layout="@layout/include_top_title"
+        />
 
     <ListView
+        android:layout_marginTop="48dp"
         android:id="@+id/lv_version"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-</LinearLayout>
+</RelativeLayout>

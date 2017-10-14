@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -66,15 +67,29 @@ public class CameraSettingActivity extends AppCompatActivity implements View.OnC
         mIvBack.setOnClickListener(this);
     }
 
+
+
+
     @Override
-    protected void onResume() {
-        super.onResume();
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            intent =new Intent(mContext,Camera_Activity.class);
+            startActivity(intent);
+            finish();
+            return false;
+        }else {
+            return super.onKeyDown(keyCode, event);
+        }
+
     }
+
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_back:
+                intent =new Intent(mContext,Camera_Activity.class);
+                startActivity(intent);
                 finish();
                 break;
             case R.id.unit_setting:

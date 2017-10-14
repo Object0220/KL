@@ -1,6 +1,7 @@
 package com.vlusi.klintelligent.utils;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.inuker.bluetooth.library.BluetoothClient;
 import com.inuker.bluetooth.library.search.SearchRequest;
@@ -61,42 +62,5 @@ public class BlueToothSearchUtils {
 
     }
 
-
-    public static void searchDeviceMac(final Context mContext) {
-        final BluetoothClient mClient = ClientManager.getClient();
-        SearchRequest request = new SearchRequest.Builder()
-                .searchBluetoothLeDevice(3000, 2)  // 先扫BLE设备3次，每次3s
-              /*  .searchBluetoothClassicDevice(5000) // 再扫经典蓝牙5s*/
-               /* .searchBluetoothLeDevice(2000)  // 再扫BLE设备2s*/
-                .build();
-
-        mClient.search(request, new SearchResponse() {
-
-            @Override
-            public void onSearchStarted() {
-            }
-
-            @Override
-            public void onDeviceFounded(SearchResult device) {
-                String address = device.getAddress();
-                if (address != null) {
-                    if (device.getName().contains("OTA")) {
-                        SPUtil.putString(mContext, Constant.mac_updata, address);
-                        ClientManager.getClient().stopSearch();
-                    }
-                }
-            }
-
-            @Override
-            public void onSearchStopped() {
-
-            }
-
-            @Override
-            public void onSearchCanceled() {
-
-            }
-        });
-    }
 
 }

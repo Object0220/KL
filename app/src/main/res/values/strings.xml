@@ -88,7 +88,7 @@
 
     <!--云台摄像机-->
     <string name="single_photo">单拍</string>
-    <string name="pan_photo">全景拍</string>
+    <string name="pan_photo">全景</string>
     <string name="long_exposure">长曝光</string>
     <!--相机设置-->
     <string name="photo">相机</string>
@@ -139,7 +139,7 @@
     <string name="Panorama_mode">全景模式</string>
     <string name="Single_shot_mode">单拍模式</string>
     <string name="The_latest_version">当前已是最新版本</string>
-    <string name="Turn_off_delay_shooting">关闭延时拍摄</string>
+    <string name="Turn_off_delay_shooting">关闭延时</string>
    <!-- <string name="s1">2秒</string>
     <string name="s2">5秒</string>
     <string name="s3">10秒</string>
@@ -151,6 +151,7 @@
     <string name="degree1">180°</string>
     <string name="degree2">330°</string>
     <string name="rectangle">矩形</string>
+    <string name="Panorama_mode_exit">结束拍照</string>
 
 
 </resources>

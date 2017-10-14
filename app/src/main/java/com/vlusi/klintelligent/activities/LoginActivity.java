@@ -280,7 +280,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     SPUtil.putString(mContext, Constant.headimageurl, mLoginInof.getData().getHeadimageurl());
                     SPUtil.putString(mContext, Constant.userId, mLoginInof.getData().getId());
                     SPUtil.putString(mContext, Constant.userToken, mLoginInof.getData().getUsertoken());
-                    ToastUtil.showToast(LoginActivity.this, "登陆成功");
+
                     finish();
                 }
             });

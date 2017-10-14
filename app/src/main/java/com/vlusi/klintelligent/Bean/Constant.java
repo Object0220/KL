@@ -58,4 +58,6 @@ public class Constant {
     public static String sn="SN"; //SN
     public static final String VIDEO_ITEM_INFO = "videoItemInfo";
 
+    public static int  mBattery;
+    public static String Battery;
 }

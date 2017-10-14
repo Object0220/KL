@@ -3,6 +3,7 @@ package com.vlusi.klintelligent.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -85,6 +86,7 @@ public class HardwareActivity extends AppCompatActivity implements View.OnClickL
             Notify(mMac, mServiece, mCharacterNotify);
         }
         ReadVersion();//读取硬件版本和软件版本
+        ObtainSN(); //获取云台sn
     }
 
 
@@ -118,7 +120,7 @@ public class HardwareActivity extends AppCompatActivity implements View.OnClickL
                 break;
 
             case R.id.upgrade:
-                FirmwareUpdateRequest();
+
                 Intent intent = new Intent(getApplication(), FirmwareActivityUpdate.class);
                 startActivity(intent);
 
@@ -148,7 +150,6 @@ public class HardwareActivity extends AppCompatActivity implements View.OnClickL
         ClientManager.getClient().write(mMac, mServiece, mCharacterWrite,
                 bytes, mWriteRsp);
         Log.i(TAG, "读取软件硬件版本信息" + ByteUtils.byteToString(bytes));
-        ObtainSN();
     }
 
 
@@ -332,7 +333,8 @@ public class HardwareActivity extends AppCompatActivity implements View.OnClickL
                     software1 = "YUN" + sb1.toString();
                     mHardware.setText(hardware1);
                     mSoftware.setText(software1);
-                    CheckUpdates(hardware1,software1);
+                    //CheckUpdates(hardware1,software1);
+
                 }
             } else if (command == CMD.SN && state == CMD.STATE_OK) { //查询SN
                 byte byteType = bytes[index++];
@@ -346,7 +348,7 @@ public class HardwareActivity extends AppCompatActivity implements View.OnClickL
                 String str = ByteUtils.byteToString(bytes);
                 String update = str.substring(1, str.length());
                 Log.e(TAG, " 请求更新成功: " + update);
-                FirmwareUpdateConfirmation();
+              //  FirmwareUpdateConfirmation();
 
             }
 

@@ -87,8 +87,8 @@
     <string name="Connected">Connected</string>
 
     <!--云台摄像机-->
-    <string name="single_photo">single_photo</string>
-    <string name="pan_photo">pan_photo</string>
+    <string name="single_photo">pictures</string>
+    <string name="pan_photo">panoramic</string>
     <string name="long_exposure">long_exposure</string>
     <!--相机设置-->
     <string name="photo">Camera</string>
@@ -141,6 +141,7 @@
     <string name="rectangle">rectangle</string>
     <string name="connect_Connected">Connected</string>
 
+    <string name="Panorama_mode_exit">End taking pictures</string>
 
 
 </resources>

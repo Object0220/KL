@@ -324,5 +324,6 @@ public class CMD {
     public static final byte SET_PITCH_AXIS_LOCK= (byte) 0x80;
     public static final byte PANORAMIC = (byte) 0x90;
     public static final byte SHOT = 0x04;
+    public static final byte NOTIFY_SOTP =0X37 ;
     public static byte Client= (byte) 0XF0;
 }

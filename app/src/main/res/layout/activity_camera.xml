@@ -20,6 +20,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+
+            android:background="@color/colorPrimaryDark"
+            android:id="@+id/show_mode"
+            android:textSize="12sp"
+            android:layout_marginTop="@dimen/space_ten"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:text="@string/single_photo"
+            android:layout_width="38dp"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+
+
         <ProgressBar
             android:visibility="gone"
             android:id="@+id/progressbar"
@@ -39,10 +53,9 @@
         <!--延时拍摄倒计时-->
         <TextView
             android:id="@+id/delayed"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:gravity="center"
             android:textColor="@color/white"
             android:textSize="110sp"
             android:visibility="gone" />
@@ -74,14 +87,14 @@
             android:background="@drawable/bluetooth_closs" />
 
         <!--电量图标-->
-        <com.vlusi.klintelligent.view.ProgerssBtn
+        <com.vlusi.klintelligent.view.BatteryView
             android:id="@+id/ib_camera_battery"
             android:layout_width="@dimen/space_thirty"
             android:layout_height="@dimen/space_battery"
             android:layout_marginRight="@dimen/space_twenty"
             android:layout_marginTop="@dimen/space_ten"
             android:layout_toLeftOf="@+id/ll_right_bar"
-            android:background="@drawable/camera_battery" />
+            />
 
 
         <!--设置，摄像头正反面，和图片-->

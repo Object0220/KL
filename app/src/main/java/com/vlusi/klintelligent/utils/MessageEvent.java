@@ -7,7 +7,6 @@ package com.vlusi.klintelligent.utils;
 
 public class MessageEvent {
   public boolean Mess;
-
     public MessageEvent(boolean mess) {
         Mess = mess;
     }

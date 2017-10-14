@@ -353,7 +353,7 @@ public class NickNameActivity extends AppCompatActivity implements View.OnClickL
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    ToastUtil.showToast(NickNameActivity.this, "请求成功");
+                                  //  ToastUtil.showToast(NickNameActivity.this, "请求成功");
                                     //TODO: 图片的地址
                                     SPUtil.putString(mContext, Constant.headimageurl, userIcon);
 
