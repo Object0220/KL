@@ -49,7 +49,7 @@ import okhttp3.Response;
 public class AboutActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Context mContext;
-    private ImageButton mIvBack;
+    private ImageButton mIvBack;   
     private TextView mTvTitle;
     private static final int REQUEST_CODE_INSTALL = 100;
     //    版本号
