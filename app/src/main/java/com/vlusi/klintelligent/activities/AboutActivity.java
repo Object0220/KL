@@ -75,6 +75,8 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         //获取app當前版本号
         getAPPVersion();
         initView();
+
+
     }
 
     @Override
